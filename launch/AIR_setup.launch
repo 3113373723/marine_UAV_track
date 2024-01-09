@@ -1,0 +1,13 @@
+<launch>
+    <arg name="vehicle_id" default="$(env vehicle_id)" />
+    <arg name="swarm_num" default="$(env swarm_num)" />
+
+    <include file="$(find dji_osdk_ros)/launch/dji_sdk_node.launch" />
+
+    <node pkg="formation_exp_20230308" type="AIR_node" name="AIR_node" output="screen">
+        <param name="vehicle_id" value="$(arg vehicle_id)"/>
+        <param name="swarm_num" value="$(arg swarm_num)"/>
+    </node>
+
+    <include file="$(find radio_proxy)/launch/AIR_proxy.launch" />
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="formation_exp_20230308" type="GS_node" name="GS_node" output="screen" launch-prefix="gnome-terminal --tab --" />
+
+    <node pkg="formation_exp_20230308" type="GS_console" name="GS_console" output="screen" launch-prefix="gnome-terminal --tab --" />
+
+    <include file="$(find radio_proxy)/launch/GS_proxy.launch" />
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find formation_exp_20230308)/rviz/geo_test.rviz" />
+
+</launch>

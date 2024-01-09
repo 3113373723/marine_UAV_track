@@ -1,0 +1,8 @@
+<launch>
+
+  <node pkg="formation_exp_20230308" type="geo_test" name="geo_test" output="screen" />
+
+  <!-- start rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find formation_exp_20230308)/rviz/geo_test.rviz" />
+
+</launch>
